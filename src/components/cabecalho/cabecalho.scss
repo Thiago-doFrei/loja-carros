@@ -1,0 +1,21 @@
+.a{
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+}
+
+.botao{
+    display: flex;
+    gap: 15px;
+}
+
+button{
+    height: 40px;
+    width: 120px;
+    font-size: 25px;
+}
