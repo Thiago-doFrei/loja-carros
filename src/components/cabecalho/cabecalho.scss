@@ -1,6 +1,6 @@
 .a{
-    background-color: orangered;
-    box-shadow: 0px 5px 1px darkblue;
+    background-color: whitesmoke;
+    box-shadow: 0px 5px 1px black;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,12 +18,12 @@
 }
 
 .bo{
-    color: black;
+    color: white;
+    background-color: black;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 246, 235);
     border-radius: 12px;
     height: 40px;
     width: 120px;

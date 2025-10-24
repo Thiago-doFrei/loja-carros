@@ -2,17 +2,18 @@
 body{
     background-color: rgb(241, 230, 230);
     margin: 0px;
+    background-image: url(../../../public/images/background.png);
 }
 
 .tabela{
     display: flex;
-    background-color: orangered;
-    box-shadow: 5px 5px 0px darkblue;
+    background-color: whitesmoke;
+    box-shadow: 2px 5px 2px black;
     width: 50%;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 25%;
     border-radius: 10px;
 }

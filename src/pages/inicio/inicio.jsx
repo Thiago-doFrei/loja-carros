@@ -1,69 +1,83 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Cabecalho from "../../components/cabecalho/cabecalho";
 import "./inicio.scss";
 
 export default function Inicio() {
-  const [valorCarro, setValorCarro] = useState("");
-  const [desconto, setDesconto] = useState("");
-  const [parcelas, setParcelas] = useState("");
+  const [dados, setDados] = useState({
+    preco: "",
+    desconto: "",
+    parcelas: "",
+  });
 
-  function calculo() {
-    if (!valorCarro || !desconto || !parcelas) {
-      alert("Preencha todos os campos");
+  function mudarValor(e) {
+    const { name, value } = e.target;
+    setDados({ ...dados, [name]: value });
+  }
+
+  function calcular() {
+    const { preco, desconto, parcelas } = dados;
+
+    if (!preco || !desconto || !parcelas) {
+      alert("Preencha todos os campos corretamente!");
       return;
     }
 
-    const valorComDesconto = valorCarro - (valorCarro * desconto) / 100;
-    const valorParcela = valorComDesconto / parcelas;
+    const precoNum = parseFloat(preco);
+    const descontoNum = parseFloat(desconto);
+    const parcelasNum = parseInt(parcelas);
+
+    const total = precoNum - descontoNum;
+    const valorParcela = total / parcelasNum;
 
     alert(
-      `Valor final: R$ ${valorComDesconto.toFixed(2)}
-Por parcela: R$ ${valorParcela.toFixed(2)}`
+      `Valor final: R$ ${total.toFixed(2)}\nValor por parcela: R$ ${valorParcela.toFixed(2)}`
     );
   }
 
   return (
     <>
       <Cabecalho />
-      <div className="tabela">
 
-        <img
-          src="../../../public/images/carro.png"
-          alt="carro"
-          width={200}
-        />
+      <div className="tabela">
+        <img src="/images/maserati.png" alt="Carro" width={400} />
 
         <div className="informacoes">
-          <h2>Informações</h2>
+          <h1>Simulador</h1>
 
-          <h3>VALOR DO CARRO</h3>
-          <input
-            type="number"
-            placeholder="Valor"
-            value={valorCarro}
-            onChange={e => setValorCarro(Number(e.target.value))}
-          />
+          <div>
+            <h3>VALOR DO CARRO</h3>
+            <input
+              type="number"
+              name="preco"
+              placeholder="Valor"
+              value={dados.preco}
+              onChange={mudarValor}
+            />
+          </div>
 
-          <h3>DESCONTO (%)</h3>
-          <input
-            type="number"
-            placeholder="Desconto"
-            value={desconto}
-            onChange={e => setDesconto(Number(e.target.value))}
-          />
+          <div>
+            <h3>DESCONTO</h3>
+            <input
+              type="number"
+              name="desconto"
+              placeholder="Desconto"
+              value={dados.desconto}
+              onChange={mudarValor}
+            />
+          </div>
 
-          <h3>QUANTIDADE DE PARCELAS</h3>
-          <input
-            type="number"
-            placeholder="Parcelas"
-            value={parcelas}
-            onChange={e => setParcelas(Number(e.target.value))}
-          />
+          <div>
+            <h3>PARCELAS</h3>
+            <input
+              type="number"
+              name="parcelas"
+              placeholder="Parcelas"
+              value={dados.parcelas}
+              onChange={mudarValor}
+            />
+          </div>
 
-          <button id="botao_calcular" onClick={calculo}>
-            CALCULAR
-          </button>
+          <button onClick={calcular}>CALCULAR</button>
         </div>
       </div>
     </>
