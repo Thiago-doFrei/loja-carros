@@ -18,7 +18,7 @@ Nosso objetivo é proporcionar mais transparência, controle e consciência fina
 </div>
 <div className="card">
     <img src="../../../public/images/carro.png" alt="carro" width={70} />
-    <h2>Desenvolvido pelo aluno x da turma x</h2>
+    <h2>Desenvolvido pelo aluno Thiago Souza Coelho da turma B</h2>
 </div>
         </>
     )
