@@ -5,8 +5,8 @@ import "./sobre.scss"
 export default function Sobre(){
     return(
         <>
-        <Cabecalho/>
         <Link to="/">Inicio</Link>
+        <Cabecalho/>
         <div className="sobre">
         <h1>Sobre nós</h1>
         <p>

@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+}
+
+.tabela{
+    display: flex;
+    background-color: red;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10%;
+    margin-left: 25%;
+    border-radius: 10px;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+}
+
+

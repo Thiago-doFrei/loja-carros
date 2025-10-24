@@ -7,6 +7,8 @@
 
 .logo{
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .botao{
@@ -14,8 +16,9 @@
     gap: 15px;
 }
 
-button{
+.bo{
     height: 40px;
     width: 120px;
     font-size: 25px;
+    margin-right: 10px;
 }

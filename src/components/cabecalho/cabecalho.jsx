@@ -8,8 +8,8 @@ import "./cabecalho.scss"
             <h1>Calculadora Auto</h1>
             </div>
             <div className="botao">
-            <button>Calc</button>
-            <button>Sobre</button>
+            <button className="bo">Calc</button>
+            <button className="bo">Sobre</button>
             </div>
 
         </div>
