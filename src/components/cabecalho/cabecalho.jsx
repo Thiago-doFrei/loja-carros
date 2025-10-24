@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import "./cabecalho.scss"
     export default function Cabecalho(){
     return(
@@ -8,8 +10,10 @@ import "./cabecalho.scss"
             <h1>Calculadora Auto</h1>
             </div>
             <div className="botao">
-            <button className="bo">Calc</button>
-            <button className="bo">Sobre</button>
+
+            <Link className="bo" to="/">Calc</Link>
+            <Link className="bo" to="/sobre">Sobre</Link>
+
             </div>
 
         </div>
